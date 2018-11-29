@@ -1,0 +1,50 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "ci": "lerna run test && npm run test && npm run eslint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "eslint": "eslint packages",
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish"
+  },
+  "dependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-preset-react-native": "^4.0.1",
+    "browserify": "^16.2.3",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "karma": "^3.1.1",
+    "karma-browserify": "^5.3.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "lerna": "^3.4.3",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.2"
+  },
+  "lerna": {
+    "packages": [
+      "packages/*"
+    ],
+    "version": "independent"
+  },
+  "jest": {
+    "roots": [
+      "packages/"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "browser": true
+    }
+  }
+}
