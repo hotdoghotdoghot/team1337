@@ -15,6 +15,7 @@
     "lesspass": "index.js"
   },
   "dependencies": {
+    "big-integer": "^1.6.36",
     "chalk": "^2.3.1",
     "clipboardy": "^1.2.3",
     "lesspass-entropy": "^1.0.0",
