@@ -2,12 +2,9 @@ import subprocess
 
 loc = "../project/packages/lesspass-cli/index.js"
 
-try:
-    output = subprocess.check_output([loc, "test", "test", "test", "-L", "0"])
-    output = output.decode("utf-8").strip()
-except Exception as e:
-    output = str(e)
-
+output = subprocess.run(
+    [loc, "test", "test", "test", "-L", "0"], capture_output=True)
+output = output.stderr.decode("utf-8")
 
 f = open("../temp/18.txt", "w")
 f.write(output)
