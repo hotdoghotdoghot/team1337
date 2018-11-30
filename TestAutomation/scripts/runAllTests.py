@@ -1,10 +1,12 @@
 import subprocess
 import re
 import os
+import webbrowser
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # delete temp dir
+print("Clearing temp...")
 folder = "../temp/"
 for the_file in os.listdir(folder):
     file_path = os.path.join(folder, the_file)
@@ -14,9 +16,12 @@ for the_file in os.listdir(folder):
     except Exception as e:
         print(e)
 
-strTable = "<html><table><tr><th>Char</th><th>ASCII</th></tr>"
+results = (
+    "<html><table><tr><th>Case</th><th>Pass?</th><th>Oracle</th><th>Output</th></tr>"
+)
 
 for case in range(1, 26):
+    print(f"Runing case {case}")
     execLoc = f"../testCasesExecutables/testCase{case:02}.py"
     oracleLoc = f"../oracles/testCase{case:02}Oracle.txt"
 
@@ -27,7 +32,7 @@ for case in range(1, 26):
     pattern = re.compile(reg)
 
     # print each exec output to temp
-    subprocess.run(["python", execLoc])
+    subprocess.run(["python3.7", execLoc])
 
     if case == 20:
         tempFile1 = open(f"../temp/{case:02}-1.txt", "r")
@@ -46,9 +51,17 @@ for case in range(1, 26):
         tempFile.close()
         result = bool(pattern.match(testOutput))
 
-    strRW = f"<tr><td>{case:02}</td><td>{result}</td></tr>"
-    strTable = strTable + strRW
+    strRW = f"<tr>\
+        <td>{case:02}</td>\
+        <td>{result}</td>\
+        <td>{reg}</td>\
+        <td>{testOutput}</td></tr>"
+    results = results + strRW
+results = results + "</table></html>"
 
-strTable = strTable + "</table></html>"
-hs = open("asciiCharHTMLTable.html", "w")
-hs.write(strTable)
+print("Writing and opening html...")
+resultsLoc = "results.html"
+hs = open(resultsLoc, "w")
+hs.write(results)
+# subprocess.run(["xdg-open", resultsLoc])
+webbrowser.open(resultsLoc)
