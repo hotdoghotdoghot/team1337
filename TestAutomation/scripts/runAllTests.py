@@ -22,7 +22,7 @@ results = "<html>\
     <th>Pass?</th><th>Oracle</th><th>Output</th></tr>"
 
 for case in range(1, 26):
-    print(f"Runing case {case}")
+    print(f"Running case {case}")
     execLoc = f"../testCasesExecutables/testCase{case:02}.py"
     oracleLoc = f"../oracles/testCase{case:02}Oracle.txt"
     desLoc = f"../testCases/testCase{case:02}.txt"
