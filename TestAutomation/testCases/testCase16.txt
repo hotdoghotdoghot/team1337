@@ -1,0 +1,3 @@
+testing lowercase and uppercase and symbols and digits (-luds)
+  example: 4j.8P6-C23qM;5"
+default length (16) and default counter (1)

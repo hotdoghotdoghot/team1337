@@ -1,0 +1,3 @@
+testing uppercase only (-u)
+  example: CNDUXOIWPNRUFJK
+default length (16) and default counter (1)

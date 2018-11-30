@@ -1,1 +1,5 @@
-test
+Tests default values (-luds --length 16 --counter 1)
+  -luds:          allow all character types
+  --length 16:    password length 16
+  --counter 1:    counter of 1
+

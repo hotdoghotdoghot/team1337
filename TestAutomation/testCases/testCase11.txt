@@ -1,0 +1,3 @@
+testing digits and symbols only (-ds)
+  example: 8&*2_=$4!0;17,9
+default length (16) and default counter (1)

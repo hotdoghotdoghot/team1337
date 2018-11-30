@@ -1,0 +1,3 @@
+testing no digits (--no-digits)
+  example: (jU*PdnCs$qM;H"
+default length (16) and default counter (1)
