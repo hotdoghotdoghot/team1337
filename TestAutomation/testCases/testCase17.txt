@@ -1,0 +1,4 @@
+testing an invalid input for length (-l -1)
+  example: 4j.8P6-C23qM;5"
+invalid inputs for length should cause the length
+flag to be ignored

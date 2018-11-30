@@ -1,0 +1,2 @@
+ensure that the command prints "text copied to clipboard"
+also tests that a correct output was copied to the clipboard

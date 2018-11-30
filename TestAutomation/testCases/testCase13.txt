@@ -1,0 +1,3 @@
+testing lowercase and uppercase and digits only (-lud)
+  example: Cj5U9dn2sNq4F0K
+default length (16) and default counter (1)

@@ -1,0 +1,3 @@
+testing uppercase and digits only (-ud)
+  example: C55U281W2N7UF0K
+default length (16) and default counter (1)

@@ -1,0 +1,3 @@
+testing no lowercase (--no-lowercase)
+  example: C&5U9=$2!N;4F0K
+default length (16) and default counter (1)
