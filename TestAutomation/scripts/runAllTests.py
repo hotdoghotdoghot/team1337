@@ -28,10 +28,18 @@ for case in range(1, 26):
     subprocess.run(["python", execLoc])
 
     if case == 20:
-        print("fuck")
+        tempFile1 = open(f"../temp/{case:02}-1.txt", "r")
+        tempFile2 = open(f"../temp/{case:02}-2.txt", "r")
+        testOutput1 = tempFile1.readline().strip()
+        testOutput2 = tempFile2.readline().strip()
+        tempFile1.close()
+        tempFile2.close()
+        result1 = bool(pattern.match(testOutput1))
+        result2 = bool(pattern.match(testOutput2))
+        print(f"Case {case:02}: {result1 and result2}")
     else:
         tempFile = open(f"../temp/{case:02}.txt", "r")
         testOutput = tempFile.readline().strip()
         tempFile.close()
         result = bool(pattern.match(testOutput))
-        print(f"Case {case}: {result}")
+        print(f"Case {case:02}: {result}")
