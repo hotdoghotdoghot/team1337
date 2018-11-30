@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.7
+
 import subprocess
 import re
 import os
@@ -18,7 +20,7 @@ for the_file in os.listdir(folder):
 
 results = "<html>\
     <link rel='stylesheet' href='style.css'>\
-    <table><tr><th>Description</th><th>Case</th>\
+    <table><tr><th>Case</th><th>Description</th>\
     <th>Pass?</th><th>Oracle</th><th>Output</th></tr>"
 
 for case in range(1, 26):
