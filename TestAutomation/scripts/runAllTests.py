@@ -64,7 +64,7 @@ for case in range(1, 26):
 results = results + "</table></html>"
 
 print("Writing and opening html...")
-resultsLoc = "results.html"
+resultsLoc = "../reports/results.html"
 with open(resultsLoc, "w") as hs:
     hs.write(results)
 webbrowser.open(resultsLoc)
