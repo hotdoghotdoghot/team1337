@@ -1,0 +1,1 @@
+Command '['../project/packages/lesspass-cli/index.js', 'test', 'test', 'test', '-L', '\\-1']' returned non-zero exit status 1.
