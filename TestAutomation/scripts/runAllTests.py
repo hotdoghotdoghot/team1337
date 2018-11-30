@@ -56,9 +56,9 @@ for case in range(1, 26):
 
     row = f"<tr><td>{case:02}</td><td>{description}</td>"
     if result is False:
-        row = row + f"<td bgcolor='#FF0000'>{result}</td>"
+        row = row + "<td bgcolor='#FF0000'>FAIL</td>"
     else:
-        row = row + f"<td bgcolor='#00FF00'>{result}</td>"
+        row = row + "<td bgcolor='#00FF00'>PASS</td>"
     row = row + f"<td>{reg}</td><td>{testOutput}</td></tr>"
     results = results + row
 results = results + "</table></html>"
