@@ -14,6 +14,7 @@ lud
 lds
 lus
 luds
+-L -1
 -L 0
 -L 20
 two counters
@@ -21,4 +22,4 @@ no lowercase
 no uppercase
 no symbols
 no digits
-
+clipboard
