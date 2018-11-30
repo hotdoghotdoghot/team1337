@@ -54,12 +54,12 @@ for case in range(1, 26):
             testOutput = tempFile.readline().strip()
         result = bool(pattern.match(testOutput))
 
-    row = f"<tr>\
-        <td>{case:02}</td>\
-        <td>{description}</td>\
-        <td>{result}</td>\
-        <td>{reg}</td>\
-        <td>{testOutput}</td></tr>"
+    row = f"<tr><td>{case:02}</td><td>{description}</td>"
+    if result is False:
+        row = row + f"<td bgcolor='#FF0000'>{result}</td>"
+    else:
+        row = row + f"<td bgcolor='#00FF00'>{result}</td>"
+    row = row + f"<td>{reg}</td><td>{testOutput}</td></tr>"
     results = results + row
 results = results + "</table></html>"
 
