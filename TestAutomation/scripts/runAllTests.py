@@ -14,6 +14,8 @@ for the_file in os.listdir(folder):
     except Exception as e:
         print(e)
 
+strTable = "<html><table><tr><th>Char</th><th>ASCII</th></tr>"
+
 for case in range(1, 26):
     execLoc = f"../testCasesExecutables/testCase{case:02}.py"
     oracleLoc = f"../oracles/testCase{case:02}Oracle.txt"
@@ -36,10 +38,17 @@ for case in range(1, 26):
         tempFile2.close()
         result1 = bool(pattern.match(testOutput1))
         result2 = bool(pattern.match(testOutput2))
-        print(f"Case {case:02}: {result1 and result2}")
+        dontMatch = testOutput1 != testOutput2
+        result = result1 and result2 and dontMatch
     else:
         tempFile = open(f"../temp/{case:02}.txt", "r")
         testOutput = tempFile.readline().strip()
         tempFile.close()
         result = bool(pattern.match(testOutput))
-        print(f"Case {case:02}: {result}")
+
+    strRW = f"<tr><td>{case:02}</td><td>{result}</td></tr>"
+    strTable = strTable + strRW
+
+strTable = strTable + "</table></html>"
+hs = open("asciiCharHTMLTable.html", "w")
+hs.write(strTable)
